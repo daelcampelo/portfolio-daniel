@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Portfólio profissional de Daniel Campelo, desenvolvedor em formação."
+    >
+
+    <title>
+        Daniel Campelo | Desenvolvedor
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ======================================
+         FUNDO BINÁRIO
+    ======================================= -->
+
+    <canvas
+        id="fundo-binario"
+        aria-hidden="true"
+    ></canvas>
+
+
+
+    <!-- ======================================
+         CABEÇALHO
+    ======================================= -->
+
+    <header class="cabecalho">
+
+
+        <!-- LOGO -->
+
+        <button
+            class="logo link-navegacao"
+            data-pagina="inicio"
+            aria-label="Ir para o início"
+        >
+
+            DC<span>.</span>
+
+        </button>
+
+
+
+        <!-- BOTÃO MOBILE -->
+
+        <button
+            class="botao-menu"
+            id="botao-menu"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+
+        <!-- MENU -->
+
+        <nav id="menu">
+
+            <button
+                class="link-navegacao link-ativo"
+                data-pagina="inicio"
+            >
+                Início
+            </button>
+
+
+            <button
+                class="link-navegacao"
+                data-pagina="sobre"
+            >
+                Sobre
+            </button>
+
+
+            <button
+                class="link-navegacao"
+                data-pagina="projetos"
+            >
+                Projetos
+            </button>
+
+
+            <button
+                class="link-navegacao"
+                data-pagina="contato"
+            >
+                Contato
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ======================================
+         APLICAÇÃO
+    ======================================= -->
+
+    <main class="aplicacao">
+
+
+        <!-- ==================================
+             INÍCIO
+        =================================== -->
+
+        <section
+            class="pagina pagina-ativa"
+            id="inicio"
+        >
+
+
+            <div class="layout-inicio">
+
+
+                <!-- ==========================
+                     INFORMAÇÕES
+                =========================== -->
+
+                <div class="apresentacao">
+
+
+                    <p class="texto-pequeno">
+
+                        <span>&lt;</span>
+
+                        olá, eu sou
+
+                        <span>/&gt;</span>
+
+                    </p>
+
+
+
+                    <h1 class="titulo-principal">
+
+                        Daniel
+
+                        <span>
+                            Campelo
+                        </span>
+
+                    </h1>
+
+
+
+                    <h2 class="subtitulo-principal">
+
+                        Desenvolvedor Front-end
+
+                        <span>
+                            em formação
+                        </span>
+
+                    </h2>
+
+
+
+                    <p class="descricao-principal">
+
+                        Estou iniciando minha trajetória profissional em tecnologia,
+                        impulsionado pela experiência na 3ª edição do Jovem Tech,
+                        que ampliou minha visão sobre as possibilidades da área.
+                        Quero evoluir como desenvolvedor e contribuir para um futuro
+                        em que inovação e tecnologia também sejam forças de
+                        desenvolvimento para o Maranhão.
+
+                    </p>
+
+
+
+                    <div class="botoes-inicio">
+
+                        <button
+                            type="button"
+                            class="botao botao-principal link-navegacao"
+                            data-pagina="projetos"
+                        >
+
+                            Conhecer projetos
+
+                            <span aria-hidden="true">→</span>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="botao botao-secundario link-navegacao"
+                            data-pagina="contato"
+                        >
+
+                            Entrar em contato
+
+                            <span aria-hidden="true">↗</span>
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- ==========================
+                     FOTO
+                =========================== -->
+
+                <div class="area-perfil">
+
+
+                    <div class="circulo-perfil">
+
+
+                        <!-- TEXTO GIRATÓRIO -->
+
+                        <svg
+                            class="texto-circular"
+                            viewBox="0 0 300 300"
+                            aria-hidden="true"
+                        >
+
+                            <defs>
+
+                                <path
+                                    id="caminho-circular"
+                                    d="
+                                        M 150,150
+                                        m -132,0
+                                        a 132,132 0 1,1 264,0
+                                        a 132,132 0 1,1 -264,0
+                                    "
+                                />
+
+                            </defs>
+
+
+                            <text class="texto-circular-estilo">
+
+                                <textPath
+                                    href="#caminho-circular"
+                                    startOffset="4%"
+                                >
+
+                                    DANIEL CAMPELO • DESENVOLVEDOR EM FORMAÇÃO •
+
+                                </textPath>
+
+                            </text>
+
+                        </svg>
+
+
+
+                        <!-- CÍRCULO DECORATIVO -->
+
+                        <div class="orbita-perfil"></div>
+
+
+
+                        <!-- FOTO -->
+
+                        <div class="foto-perfil">
+
+                            <img
+                                src="assets/daniel.jpg"
+                                alt="Foto de Daniel Campelo"
+                            >
+
+                        </div>
+
+
+
+                        <!-- PONTO ROXO -->
+
+                        <div class="ponto-perfil"></div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <p class="orientacao-navegacao">
+
+                <span>
+                    EXPLORE /
+                </span>
+
+                Navegue pelo menu para conhecer minha trajetória e meus projetos.
+
+                <span aria-hidden="true">
+                    →
+                </span>
+
+            </p>
+
+        </section>
+
+
+
+        <!-- ==================================
+             SOBRE
+        =================================== -->
+
+        <section
+            class="pagina"
+            id="sobre"
+        >
+
+            <div class="conteudo-pagina">
+
+
+                <p class="texto-pequeno">
+
+                    <span>
+                        01 //
+                    </span>
+
+                    sobre mim
+
+                </p>
+
+
+
+                <h2 class="titulo-pagina">
+
+                    Criatividade encontra
+
+                    <span>
+                        tecnologia.
+                    </span>
+
+                </h2>
+
+
+
+                <div class="layout-sobre">
+
+
+                    <div class="texto-sobre">
+
+                        <p>
+
+                            Sou um desenvolvedor em formação
+                            interessado em criar experiências
+                            digitais que unam tecnologia,
+                            funcionalidade e identidade visual.
+
+                        </p>
+
+
+                        <p>
+
+                            Atualmente desenvolvo projetos utilizando
+                            HTML, CSS e JavaScript enquanto amplio
+                            meus conhecimentos em desenvolvimento
+                            web e engenharia de software.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="informacoes-sobre">
+
+
+                        <div class="item-informacao">
+
+                            <span>
+                                01.
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Área
+                                </small>
+
+                                <strong>
+                                    Desenvolvimento Web
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="item-informacao">
+
+                            <span>
+                                02.
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Foco atual
+                                </small>
+
+                                <strong>
+                                    Front-end
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="item-informacao">
+
+                            <span>
+                                03.
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Status
+                                </small>
+
+                                <strong>
+                                    Desenvolvedor em formação
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             HABILIDADES
+        =================================== -->
+
+        <section
+            class="pagina"
+            id="habilidades"
+        >
+
+            <div class="conteudo-pagina">
+
+
+                <p class="texto-pequeno">
+
+                    <span>
+                        02 //
+                    </span>
+
+                    tecnologias
+
+                </p>
+
+
+
+                <h2 class="titulo-pagina">
+
+                    Tecnologias que
+
+                    <span>
+                        estou aprendendo.
+                    </span>
+
+                </h2>
+
+
+
+                <div class="grade-habilidades">
+
+
+                    <article class="cartao-habilidade">
+
+                        <span>
+                            01
+                        </span>
+
+                        <strong>
+                            HTML
+                        </strong>
+
+                        <small>
+                            estrutura
+                        </small>
+
+                    </article>
+
+
+
+                    <article class="cartao-habilidade">
+
+                        <span>
+                            02
+                        </span>
+
+                        <strong>
+                            CSS
+                        </strong>
+
+                        <small>
+                            interface
+                        </small>
+
+                    </article>
+
+
+
+                    <article class="cartao-habilidade">
+
+                        <span>
+                            03
+                        </span>
+
+                        <strong>
+                            JavaScript
+                        </strong>
+
+                        <small>
+                            interação
+                        </small>
+
+                    </article>
+
+
+
+                    <article class="cartao-habilidade">
+
+                        <span>
+                            04
+                        </span>
+
+                        <strong>
+                            Git
+                        </strong>
+
+                        <small>
+                            versionamento
+                        </small>
+
+                    </article>
+
+
+
+                    <article class="cartao-habilidade">
+
+                        <span>
+                            05
+                        </span>
+
+                        <strong>
+                            GitHub
+                        </strong>
+
+                        <small>
+                            repositórios
+                        </small>
+
+                    </article>
+
+
+
+                    <article class="cartao-habilidade">
+
+                        <span>
+                            06
+                        </span>
+
+                        <strong>
+                            Python
+                        </strong>
+
+                        <small>
+                            aprendizado
+                        </small>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             PROJETOS
+        =================================== -->
+
+        <section
+            class="pagina"
+            id="projetos"
+        >
+
+            <div class="conteudo-pagina">
+
+
+                <p class="texto-pequeno">
+
+                    <span>
+                        03 //
+                    </span>
+
+                    projetos
+
+                </p>
+
+
+
+                <h2 class="titulo-pagina">
+
+                    Projetos que mostram
+
+                    <span>
+                        minha evolução.
+                    </span>
+
+                </h2>
+
+
+
+                <div class="grade-projetos">
+
+
+                    <article class="cartao-projeto">
+
+
+                        <div class="topo-projeto">
+
+                            <span>
+                                001
+                            </span>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="conteudo-projeto">
+
+                            <p class="tipo-projeto">
+
+                                WEBSITE AUTORAL
+
+                            </p>
+
+
+                            <h3>
+                                Entre Sonhos
+                            </h3>
+
+
+                            <p>
+
+                                Projeto autoral criado para
+                                apresentar poemas, textos e
+                                experiências visuais utilizando
+                                tecnologias front-end.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="tecnologias-projeto">
+
+                            <span>HTML</span>
+
+                            <span>CSS</span>
+
+                            <span>JavaScript</span>
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <article class="cartao-projeto">
+
+
+                        <div class="topo-projeto">
+
+                            <span>
+                                002
+                            </span>
+
+                            <span>
+                                +
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="conteudo-projeto">
+
+                            <p class="tipo-projeto">
+
+                                EM DESENVOLVIMENTO
+
+                            </p>
+
+
+                            <h3>
+
+                                Próximo projeto
+
+                            </h3>
+
+
+                            <p>
+
+                                Espaço reservado para os próximos
+                                projetos da minha trajetória como
+                                desenvolvedor.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="tecnologias-projeto">
+
+                            <span>
+                                coming soon
+                            </span>
+
+                        </div>
+
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             CONTATO
+        =================================== -->
+
+        <section
+            class="pagina"
+            id="contato"
+        >
+
+            <div class="conteudo-pagina conteudo-contato">
+
+
+                <p class="texto-pequeno">
+
+                    <span>
+                        04 //
+                    </span>
+
+                    contato
+
+                </p>
+
+
+
+                <h2 class="titulo-contato">
+
+                    Vamos criar
+
+                    <span>
+                        alguma coisa?
+                    </span>
+
+                </h2>
+
+
+
+                <p class="descricao-contato">
+
+                    Estou aberto a oportunidades,
+                    projetos, aprendizado e novas conexões.
+
+                </p>
+
+
+
+                <div class="links-contato">
+
+
+                    <a
+                        href="mailto:seuemail@email.com"
+                    >
+
+                        E-mail
+
+                        <span>
+                            ↗
+                        </span>
+
+                    </a>
+
+
+
+                    <a
+                        href="https://github.com/daelcampelo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        GitHub
+
+                        <span>
+                            ↗
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ======================================
+         RODAPÉ
+    ======================================= -->
+
+    <div class="rodape">
+
+        <span>
+            © 2026
+        </span>
+
+        <span>
+            DANIEL CAMPELO
+        </span>
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
