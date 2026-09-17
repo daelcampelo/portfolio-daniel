@@ -223,29 +223,49 @@ body::after {
 ====================================== */
 
 .cabecalho {
-
     position: fixed;
-
     top: 0;
-
     left: 0;
 
     width: 100%;
-
     height: 90px;
-
-    padding:
-        0 7%;
+    padding: 0 7%;
 
     z-index: 100;
 
     display: flex;
-
     align-items: center;
+    justify-content: space-between;
 
-    justify-content:
-        space-between;
+    background: transparent;
+    border-bottom: 1px solid transparent;
 
+    transition:
+        height 0.35s ease,
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.cabecalho.cabecalho-rolado {
+    height: 74px;
+
+    background:
+        rgba(2, 2, 4, 0.82);
+
+    border-bottom-color:
+        rgba(255, 255, 255, 0.07);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 12px 40px
+        rgba(0, 0, 0, 0.18);
 }
 
 
@@ -305,36 +325,25 @@ body::after {
 
 
 .cabecalho nav button {
-
     position: relative;
 
     border: none;
-
     background: transparent;
 
-    color:
-        var(--cinza);
+    color: #c9c9d3;
 
-    font-family:
-        var(--fonte-codigo);
+    font-family: var(--fonte-texto);
+    font-size: 0.95rem;
+    font-weight: 700;
 
-    font-size:
-        0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 
-    text-transform:
-        uppercase;
-
-    letter-spacing:
-        1.2px;
-
-    padding:
-        10px 0;
+    padding: 10px 0;
 
     cursor: pointer;
 
-    transition:
-        color 0.3s ease;
-
+    transition: color 0.3s ease;
 }
 
 
@@ -449,7 +458,7 @@ body::after {
     padding: 110px 8% 65px;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 
     overflow-x: hidden;
@@ -535,14 +544,14 @@ body::after {
 ====================================== */
 
 .apresentacao {
+    width: 100%;
+    max-width: 680px;
 
     display: flex;
-
     flex-direction: column;
+    align-items: flex-start;
 
-    align-items:
-        flex-start;
-
+    min-width: 0;
 }
 
 
@@ -562,8 +571,9 @@ body::after {
     font-family:
         var(--fonte-codigo);
 
-    font-size:
-        0.7rem;
+   .texto-pequeno {
+        font-size: clamp(0.68rem, 0.55vw, 0.78rem);
+    }
 
     letter-spacing:
         3px;
@@ -589,29 +599,17 @@ body::after {
 ====================================== */
 
 .titulo-principal {
+    font-family: var(--fonte-titulo);
 
-    font-family:
-        var(--fonte-titulo);
-
-    font-size:
-
-        clamp(
-            4rem,
-            7vw,
-            7.3rem
-        );
+    font-size: clamp(4rem, 6.1vw, 6.6rem);
 
     font-weight: 700;
+    line-height: 0.88;
+    letter-spacing: -0.055em;
 
-    line-height:
-        0.8;
+    text-transform: uppercase;
 
-    letter-spacing:
-        -0.07em;
-
-    text-transform:
-        uppercase;
-
+    max-width: 100%;
 }
 
 
@@ -645,23 +643,30 @@ body::after {
 ====================================== */
 
 .subtitulo-principal {
+    margin-top: 34px;
 
-    margin-top:
-        30px;
+    color: var(--branco);
 
-    color:
-        var(--cinza);
+    font-family: var(--fonte-texto);
 
-    font-size:
+    font-size: clamp(1.25rem, 1.6vw, 1.55rem);
+    font-weight: 600;
+    line-height: 1.35;
+}
 
-        clamp(
-            1rem,
-            2vw,
-            1.45rem
-        );
+.subtitulo-principal span {
+    display: block;
 
-    font-weight: 400;
+    margin-top: 5px;
 
+    color: #c0c0ca;
+
+    font-family: var(--fonte-codigo);
+    font-size: 0.72em;
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 
@@ -679,22 +684,13 @@ body::after {
 ====================================== */
 
 .descricao-principal {
+    max-width: 590px;
+    margin-top: 26px;
 
-    max-width:
-        520px;
+    color: #b0b0ba;
 
-    margin-top:
-        22px;
-
-    color:
-        var(--cinza);
-
-    font-size:
-        0.95rem;
-
-    line-height:
-        1.8;
-
+    font-size: clamp(1rem, 0.9vw, 1.12rem);
+    line-height: 1.8;
 }
 
 
@@ -704,53 +700,43 @@ body::after {
 ====================================== */
 
 .botoes-inicio {
-
     display: flex;
+    flex-wrap: wrap;
 
-    gap: 14px;
+    gap: 18px;
 
-    margin-top:
-        30px;
-
+    margin-top: 36px;
 }
 
 
 
 .botao {
+    min-width: 220px;
 
-    min-width:
-        150px;
+    padding: 16px 28px;
 
-    padding:
-        13px 22px;
+    border-radius: 14px;
 
-    border-radius:
-        8px;
+    text-decoration: none;
 
-    text-decoration:
-        none;
+    font-family: var(--fonte-texto);
+    font-size: 0.96rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
 
-    font-size:
-        0.8rem;
-
-    font-weight:
-        600;
-
-    display:
-        inline-flex;
-
+    display: inline-flex;
     align-items: center;
-
     justify-content: center;
 
-    gap:
-        11px;
+    gap: 10px;
 
     cursor: pointer;
 
     transition:
-        0.3s ease;
-
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
 }
 
 
@@ -898,13 +884,13 @@ body::after {
 ====================================== */
 
 .area-perfil {
+    position: relative;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
+    min-width: 0;
 }
 
 
@@ -960,27 +946,14 @@ body::after {
 
 
 .texto-circular-estilo {
+    fill: rgba(255, 255, 255, 0.92);
 
-    fill:
+    font-family: var(--fonte-texto);
+    font-size: 13px;
+    font-weight: 700;
 
-        rgba(
-            255,
-            255,
-            255,
-            0.82
-        );
-
-    font-family:
-        var(--fonte-codigo);
-
-    font-size:
-        11px;
-
-    font-weight: 500;
-
-    letter-spacing:
-        2px;
-
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
 }
 
 
@@ -1077,128 +1050,66 @@ body::after {
 ====================================== */
 
 .foto-perfil {
-
     position: relative;
 
-    width: 72%;
-
-    height: 72%;
+    width: 100%;
+    height: 100%;
 
     z-index: 3;
 
-    padding:
-        4px;
+    padding: 0;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
-    background:
-
-        linear-gradient(
-            135deg,
-            var(--roxo),
-            var(--azul),
-            #17171e
-        );
+    background: transparent;
 
     box-shadow:
+        0 0 28px
+        rgba(124, 58, 237, 0.12);
 
-        0 0 55px
-        rgba(
-            124,
-            58,
-            237,
-            0.27
-        );
-
+    overflow: hidden;
 }
 
 
 
 .foto-perfil::before {
-
     content: "";
 
     position: absolute;
-
-    inset:
-        -25px;
+    inset: -25px;
 
     z-index: -1;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     background:
-
-        rgba(
-            124,
-            58,
-            237,
-            0.14
+        radial-gradient(
+            circle,
+            rgba(168, 85, 247, 0.18),
+            rgba(99, 102, 241, 0.07) 48%,
+            transparent 72%
         );
 
-    filter:
-        blur(40px);
-
+    filter: blur(48px);
 }
 
 
 
 .foto-perfil img {
-
     display: block;
 
     width: 100%;
-
     height: 100%;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     object-fit: cover;
+    object-position: center;
 
-    object-position:
-        center;
+    border: none;
 
-    border:
-
-        4px solid
-        #030305;
-
-}
-
-
-
-/* ======================================
-   PONTO ROXO
-====================================== */
-
-.ponto-perfil {
-
-    position: absolute;
-
-    right: 8%;
-
-    top: 29%;
-
-    width: 9px;
-
-    height: 9px;
-
-    z-index: 8;
-
-    border-radius:
-        50%;
-
-    background:
-        var(--roxo);
-
-    box-shadow:
-
-        0 0 18px
-        var(--roxo);
-
+    transform: scale(1.30);
+    transform-origin: center;
 }
 
 
@@ -1247,6 +1158,113 @@ body::after {
 /* ======================================
    SOBRE
 ====================================== */
+
+.conteudo-sobre {
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+
+.titulo-sobre {
+    max-width: 950px;
+}
+
+
+.introducao-sobre {
+    max-width: 780px;
+    margin-top: 48px;
+}
+
+
+.introducao-sobre p,
+.bloco-jovem-tech > p,
+.texto-visao p {
+    color: #b0b0ba;
+
+    font-size: 1rem;
+    line-height: 1.85;
+}
+
+
+.introducao-sobre p + p,
+.bloco-jovem-tech > p + p,
+.texto-visao p + p {
+    margin-top: 18px;
+}
+
+.bloco-jovem-tech {
+    max-width: 900px;
+
+    margin-top: 80px;
+    padding: 34px 38px;
+
+    border-left: 2px solid var(--roxo);
+    border-radius: 0 16px 16px 0;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(168, 85, 247, 0.08),
+            rgba(99, 102, 241, 0.025),
+            transparent
+        );
+}
+
+
+.rotulo-sobre {
+    margin-bottom: 16px;
+
+    color: var(--roxo);
+
+    font-family: var(--fonte-codigo);
+    font-size: 0.72rem;
+    font-weight: 500;
+
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+
+.bloco-jovem-tech h3 {
+    margin-bottom: 22px;
+
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+    font-weight: 600;
+
+    letter-spacing: -0.04em;
+}
+
+.bloco-visao {
+    max-width: 950px;
+
+    margin-top: 90px;
+    padding-top: 55px;
+
+    border-top: 1px solid var(--borda);
+}
+
+
+.frase-visao {
+    max-width: 850px;
+
+    margin-top: 20px;
+
+    color: var(--branco);
+
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2rem, 4.2vw, 4rem);
+    font-weight: 600;
+
+    line-height: 1.08;
+    letter-spacing: -0.055em;
+}
+
+
+.texto-visao {
+    max-width: 780px;
+    margin-top: 38px;
+}
 
 .layout-sobre {
 
@@ -1387,121 +1405,104 @@ body::after {
    HABILIDADES
 ====================================== */
 
-.grade-habilidades {
+.secao-habilidades {
+    margin-top: 100px;
+    padding-top: 55px;
 
+    border-top: 1px solid var(--borda);
+}
+
+
+.cabecalho-habilidades h3 {
+    max-width: 650px;
+
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2rem, 3.5vw, 3.4rem);
+    font-weight: 600;
+
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+
+.grade-habilidades {
     display: grid;
 
     grid-template-columns:
-        repeat(
-            3,
-            1fr
-        );
+        repeat(3, minmax(0, 1fr));
 
-    gap:
-        14px;
+    gap: 16px;
 
-    margin-top:
-        43px;
-
+    margin-top: 38px;
 }
 
 
 
 .cartao-habilidade {
+    position: relative;
 
-    height:
-        125px;
+    min-height: 140px;
+    padding: 24px;
 
-    padding:
-        20px;
-
-    border:
-
-        1px solid
-        var(--borda);
-
-    border-radius:
-        12px;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
 
     background:
-        var(--cartao);
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.012)
+        );
 
     display: flex;
+    align-items: flex-end;
 
-    flex-direction: column;
-
-    justify-content:
-        space-between;
+    overflow: hidden;
 
     transition:
-        0.3s ease;
-
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
 }
 
+
+.cartao-habilidade::before {
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    top: -35px;
+    right: -35px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(168, 85, 247, 0.12);
+
+    filter: blur(5px);
+}
 
 
 .cartao-habilidade:hover {
-
-    transform:
-        translateY(-5px);
+    transform: translateY(-5px);
 
     border-color:
-
-        rgba(
-            168,
-            85,
-            247,
-            0.45
-        );
-
+        rgba(168, 85, 247, 0.45);
 }
 
 
+.cartao-habilidade h4 {
+    position: relative;
+    z-index: 1;
 
-.cartao-habilidade span {
+    font-family: var(--fonte-titulo);
+    font-size: 1.45rem;
+    font-weight: 600;
 
-    color:
-        var(--roxo);
-
-    font-family:
-        var(--fonte-codigo);
-
-    font-size:
-        0.6rem;
-
-}
-
-
-
-.cartao-habilidade strong {
-
-    font-family:
-        var(--fonte-titulo);
-
-    font-size:
-        1.2rem;
-
-}
-
-
-
-.cartao-habilidade small {
-
-    color:
-        var(--cinza-escuro);
-
-    font-family:
-        var(--fonte-codigo);
-
-    font-size:
-        0.58rem;
-
-    letter-spacing:
-        1px;
-
-    text-transform:
-        uppercase;
-
+    letter-spacing: -0.03em;
 }
 
 
@@ -1934,6 +1935,21 @@ and
 
 @media (max-width: 850px) {
 
+    .bloco-jovem-tech {
+        margin-top: 60px;
+        padding: 28px;
+    }
+
+
+    .bloco-visao {
+        margin-top: 70px;
+    }
+
+
+    .secao-habilidades {
+        margin-top: 75px;
+    }
+    
     .cabecalho {
 
         height:
@@ -1945,6 +1961,11 @@ and
     }
 
 
+    .cabecalho.cabecalho-rolado {
+        height: 66px;
+    }
+
+
     .botao-menu {
 
         display:
@@ -1953,13 +1974,9 @@ and
     }
 
 
-    .cabecalho nav {
-
-        position:
-            absolute;
-
-        top:
-            68px;
+   .cabecalho nav {
+        position: absolute;
+        top: calc(100% - 6px);
 
         right:
             6%;
@@ -2094,12 +2111,15 @@ and
             15px;
 
         max-width:
-            500px;
+            620px;
 
     }
 
 
     .botoes-inicio {
+
+        flex-wrap:
+            wrap;
 
         margin-top:
             20px;
@@ -2117,17 +2137,6 @@ and
 
         margin-top:
             28px;
-
-    }
-
-
-    .grade-habilidades {
-
-        grid-template-columns:
-            repeat(
-                2,
-                1fr
-            );
 
     }
 
@@ -2234,24 +2243,21 @@ and
 
 
     .grade-habilidades {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
-        margin-top:
-            22px;
-
-        gap:
-            8px;
-
+        gap: 10px;
     }
 
 
     .cartao-habilidade {
+        min-height: 105px;
+        padding: 17px;
+    }
 
-        height:
-            90px;
 
-        padding:
-            13px;
-
+    .cartao-habilidade h4 {
+        font-size: 1.15rem;
     }
 
 

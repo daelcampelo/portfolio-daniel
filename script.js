@@ -32,6 +32,61 @@ const botaoMenu =
     );
 
 
+const cabecalho =
+    document.querySelector(
+        ".cabecalho"
+    );
+
+
+
+/* ==========================================
+   CABEÇALHO DURANTE O SCROLL
+========================================== */
+
+function atualizarCabecalho(pagina) {
+
+    if (!pagina || !cabecalho) {
+        return;
+    }
+
+    const paginaAtiva =
+        document.querySelector(
+            ".pagina.pagina-ativa"
+        );
+
+    if (pagina !== paginaAtiva) {
+        return;
+    }
+
+    const paginaFoiRolada =
+        pagina.scrollTop > 20;
+
+    cabecalho.classList.toggle(
+        "cabecalho-rolado",
+        paginaFoiRolada
+    );
+
+}
+
+
+paginas.forEach(pagina => {
+
+    pagina.addEventListener(
+        "scroll",
+        () => {
+
+            atualizarCabecalho(
+                pagina
+            );
+
+        },
+        {
+            passive: true
+        }
+    );
+
+});
+
 
 /* ==========================================
    FUNÇÃO PARA ABRIR UMA PÁGINA
@@ -80,6 +135,11 @@ function abrirPagina(nomePagina) {
 
     paginaEscolhida.classList.add(
         "pagina-ativa"
+    );
+
+
+    atualizarCabecalho(
+        paginaEscolhida
     );
 
 
