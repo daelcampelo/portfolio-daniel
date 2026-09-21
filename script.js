@@ -38,6 +38,395 @@ const cabecalho =
     );
 
 
+/* ==========================================
+   DADOS DOS PROJETOS
+========================================== */
+
+const projetos = [
+
+    {
+        id: "entre-sonhos",
+
+        numero: "001",
+
+        nome: "Entre Sonhos",
+
+        categoria: "Projeto autoral",
+
+        origem: "Autoral",
+
+        descricao:
+            "Projeto autoral criado para reunir escrita, identidade visual e desenvolvimento front-end em uma experiência digital própria.",
+
+        tecnologias: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        imagem:"assets/imagens/projetos/entre-sonhos/capa.png",
+
+        destaque: true,
+
+        possuiCase: true,
+
+        fraseCase:"Um espaço digital onde escrita, memória e identidade visual se encontram.",
+
+        secoesCase: [
+
+            {
+                titulo: "O projeto",
+
+                texto: [
+                    `Entre Sonhos nasceu do desejo de criar um espaço próprio para a escrita. Um lugar onde poemas e textos pudessem existir não apenas como palavras em uma página, mas dentro de uma experiência visual que também ajudasse a contar suas histórias.`,
+
+                    `O projeto une desenvolvimento front-end e expressão autoral, buscando transformar o próprio site em parte da experiência de leitura. Embora tenha começado a partir da poesia, a proposta não é limitar o Entre Sonhos a um único formato de escrita.`
+                ]
+            },
+
+            {
+                titulo: "A ideia",
+
+                texto: [
+                    `A intenção desde o início foi fugir da aparência tradicional de um blog. Em vez de uma interface neutra, busco construir um espaço com personalidade, capaz de transmitir memória, afeto e identidade antes mesmo de o visitante começar a ler.`,
+
+                    `Quero que o Entre Sonhos seja também um lugar onde eu possa registrar aquilo que penso e observo: refletir sobre os próprios poemas, escrever sobre política e sociedade, reunir impressões de leituras, produzir resumos de livros e explorar temas que despertem minha curiosidade.`,
+
+                    `Mais do que definir categorias rígidas, quero preservar a liberdade de permitir que o projeto acompanhe aquilo que minha criatividade desejar investigar.`
+                ]
+            },
+
+            {
+                titulo: "Identidade e experiência",
+
+                texto: [
+                    `A identidade do projeto utiliza composição em camadas, referências visuais afetivas, fotografias, texturas e elementos decorativos para construir uma estética que mistura o digital com a sensação de algo feito à mão.`,
+
+                    `Ao mesmo tempo, um dos desafios é preservar a legibilidade e a navegação para que a personalidade visual não se torne um obstáculo para quem deseja acessar os textos.`
+                ]
+            },
+
+            {
+                titulo: "Desenvolvimento",
+
+                texto: [
+                    `O Entre Sonhos também funciona como um espaço de experimentação durante minha formação em desenvolvimento front-end. Nele, venho aplicando HTML, CSS e JavaScript enquanto exploro composição de interfaces, responsividade, animações e organização visual.`,
+
+                    `Como é um projeto autoral e em evolução, novas ideias e melhorias continuam sendo incorporadas à medida que meus conhecimentos também avançam.`
+                ]
+            },
+
+            {
+                titulo: "Para onde quero levar o projeto",
+
+                destaque:
+                    "Mais do que um espaço para publicar o que escrevo, quero que ele se torne um lugar para registrar como penso.",
+
+                texto: [
+                    `O Entre Sonhos foi pensado como um projeto em expansão. No futuro, quero que ele reúna diferentes formas de escrita e reflexão: poesia, textos sobre política e sociedade, comentários sobre livros, observações do cotidiano, ensaios pessoais e outras experiências que ainda possam surgir.`,
+
+                    `A ideia é construir, aos poucos, um arquivo autoral que acompanhe não apenas aquilo que escrevo, mas também as mudanças na maneira como penso, interpreto e observo o mundo.`,
+
+                    `Essa expansão também cria novos desafios de desenvolvimento: organizar conteúdos muito diferentes sem perder a identidade do site, criar formas de navegação entre temas, pensar sistemas de categorias e busca e manter uma experiência de leitura confortável conforme o projeto crescer.`
+                ]
+            },
+
+            {
+                titulo: "O que estou aprendendo",
+
+                texto: [
+                    `Construir o Entre Sonhos tem me ensinado a transformar uma ideia abstrata em decisões concretas de interface. Tenho aprendido a equilibrar estética e funcionalidade, organizar melhor o código, pensar em diferentes tamanhos de tela e questionar quando um elemento visual realmente contribui para a experiência.`,
+
+                    `Mais do que terminar uma página, o projeto tem sido uma forma de acompanhar minha própria evolução como desenvolvedor.`
+                ]
+            }
+
+        ],
+
+        linkProjeto: ""
+    },
+
+
+    {
+        id: "fokus",
+
+        numero: "002",
+
+        nome: "Fokus",
+
+        categoria: "Projeto de formação",
+
+        origem: "Alura",
+
+        descricao:
+            "Projeto desenvolvido durante minha formação, aplicando conceitos de JavaScript e construção de interfaces.",
+
+        tecnologias: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        imagem:
+            "assets/imagens/projetos/fokus/capa.png",
+
+        destaque: false,
+
+        possuiCase: false,
+
+        linkProjeto: ""
+    },
+
+
+    {
+        id: "numero-secreto",
+
+        numero: "003",
+
+        nome: "Número Secreto",
+
+        categoria: "Projeto de formação",
+
+        origem: "Alura",
+
+        descricao:
+            "Projeto desenvolvido durante minha formação para praticar fundamentos de lógica e JavaScript.",
+
+        tecnologias: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        imagem:
+            "assets/imagens/projetos/numero-secreto/capa.png",
+
+        destaque: false,
+
+        possuiCase: false,
+
+        linkProjeto: ""
+    }
+
+];
+
+
+/* ==========================================
+   TECNOLOGIAS DOS PROJETOS
+========================================== */
+
+function criarListaTecnologias(tecnologias) {
+
+    return tecnologias
+        .map(
+            tecnologia =>
+                `<span>${tecnologia}</span>`
+        )
+        .join("");
+
+}
+
+
+/* ==========================================
+   RENDERIZAR PROJETOS
+========================================== */
+
+function renderizarProjetos() {
+
+    const areaDestaque =
+        document.getElementById(
+            "projeto-destaque"
+        );
+
+    const gradeProjetos =
+        document.getElementById(
+            "grade-projetos"
+        );
+
+
+    if (
+        !areaDestaque ||
+        !gradeProjetos
+    ) {
+        return;
+    }
+
+
+    const projetoDestaque =
+        projetos.find(
+            projeto => projeto.destaque
+        );
+
+
+    const projetosFormacao =
+        projetos.filter(
+            projeto => !projeto.destaque
+        );
+
+
+    /* ==========================================
+       PROJETO EM DESTAQUE
+    ========================================== */
+
+    if (projetoDestaque) {
+
+        const imagemDestaque =
+            projetoDestaque.imagem
+                ? `
+                    <div class="midia-projeto destaque-midia">
+
+                        <img
+                            src="${projetoDestaque.imagem}"
+                            alt="Captura de tela do projeto ${projetoDestaque.nome}"
+                        >
+
+                    </div>
+                `
+                : "";
+
+
+        areaDestaque.innerHTML = `
+
+            <article class="projeto-destaque">
+
+                ${imagemDestaque}
+
+
+                <div class="conteudo-projeto-destaque">
+
+                    <div>
+
+                        <p class="metadado-projeto">
+
+                            PROJETO /
+                            ${projetoDestaque.numero}
+
+                            <span>
+                                ${projetoDestaque.categoria}
+                            </span>
+
+                        </p>
+
+
+                        <h3>
+                            ${projetoDestaque.nome}
+                        </h3>
+
+
+                        <p class="descricao-projeto">
+                            ${projetoDestaque.descricao}
+                        </p>
+
+
+                        <div class="tecnologias-projeto">
+
+                            ${criarListaTecnologias(
+                                projetoDestaque.tecnologias
+                            )}
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="#projeto/${projetoDestaque.id}"
+                        class="botao-case"
+                    >
+
+                        Explorar case
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+        `;
+
+    }
+
+
+    /* ==========================================
+       PROJETOS DE FORMAÇÃO
+    ========================================== */
+
+    gradeProjetos.innerHTML =
+        projetosFormacao
+            .map(
+                projeto => {
+
+                    const imagemProjeto =
+                        projeto.imagem
+                            ? `
+                                <div class="midia-projeto">
+
+                                    <img
+                                        src="${projeto.imagem}"
+                                        alt="Captura de tela do projeto ${projeto.nome}"
+                                    >
+
+                                </div>
+                            `
+                            : "";
+
+
+                    return `
+
+                        <article class="cartao-projeto-formacao">
+
+                            ${imagemProjeto}
+
+
+                            <div class="conteudo-projeto-formacao">
+
+                                <p class="metadado-projeto">
+
+                                    PROJETO /
+                                    ${projeto.numero}
+
+                                </p>
+
+
+                                <p class="origem-projeto">
+
+                                    ${projeto.categoria}
+                                    •
+                                    ${projeto.origem}
+
+                                </p>
+
+
+                                <h3>
+                                    ${projeto.nome}
+                                </h3>
+
+
+                                <div class="tecnologias-projeto">
+
+                                    ${criarListaTecnologias(
+                                        projeto.tecnologias
+                                    )}
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    `;
+
+                }
+            )
+            .join("");
+
+}
+
+
 
 /* ==========================================
    CABEÇALHO DURANTE O SCROLL
@@ -92,7 +481,10 @@ paginas.forEach(pagina => {
    FUNÇÃO PARA ABRIR UMA PÁGINA
 ========================================== */
 
-function abrirPagina(nomePagina) {
+function abrirPagina(
+    nomePagina,
+    paginaMenu = nomePagina
+) {
 
 
     /*
@@ -167,7 +559,7 @@ function abrirPagina(nomePagina) {
 
             if (
                 link.dataset.pagina ===
-                nomePagina
+                paginaMenu
             ) {
 
                 link.classList.add(
@@ -226,13 +618,67 @@ function obterPaginaDaUrl() {
 
 function atualizarPaginaPelaUrl() {
 
-    const nomePagina =
+    const rota =
         obterPaginaDaUrl();
+
+
+    /* ==========================================
+       CASE DE PROJETO
+    ========================================== */
+
+    if (
+        rota.startsWith(
+            "projeto/"
+        )
+    ) {
+
+        const idProjeto =
+            rota.split("/")[1];
+
+
+        const projeto =
+            projetos.find(
+                item =>
+                    item.id === idProjeto
+            );
+
+
+        if (
+            !projeto ||
+            !projeto.possuiCase
+        ) {
+
+            window.location.hash =
+                "projetos";
+
+            return;
+        }
+
+
+        renderizarCaseProjeto(
+            projeto
+        );
+
+
+        abrirPagina(
+            "case-projeto",
+            "projetos"
+        );
+
+
+        return;
+    }
+
+
+    /* ==========================================
+       PÁGINAS NORMAIS
+    ========================================== */
 
     const paginaExiste =
         document.getElementById(
-            nomePagina
+            rota
         );
+
 
     if (!paginaExiste) {
 
@@ -240,20 +686,210 @@ function atualizarPaginaPelaUrl() {
             "inicio";
 
         return;
-
     }
 
+
     abrirPagina(
-        nomePagina
+        rota
     );
 
 }
+
+
+function criarSecoesCase(secoes) {
+
+    if (!Array.isArray(secoes)) {
+        return "";
+    }
+
+
+    return secoes
+        .map(
+            (secao, indice) => {
+
+                const numero =
+                    String(indice + 1)
+                        .padStart(2, "0");
+
+
+                const destaque =
+                    secao.destaque
+
+                        ? `
+                            <blockquote class="destaque-case">
+                                ${secao.destaque}
+                            </blockquote>
+                        `
+
+                        : "";
+
+
+                const paragrafos =
+                    secao.texto
+                        .map(
+                            paragrafo =>
+                                `<p>${paragrafo}</p>`
+                        )
+                        .join("");
+
+
+                return `
+
+                    <section class="secao-case">
+
+                        <p class="numero-case">
+                            ${numero} /
+                        </p>
+
+
+                        <h3>
+                            ${secao.titulo}
+                        </h3>
+
+
+                        ${destaque}
+
+
+                        <div class="texto-case">
+
+                            ${paragrafos}
+
+                        </div>
+
+                    </section>
+
+                 `;
+
+            }
+        )
+    .join("");
+
+}
+
+
+function renderizarCaseProjeto(projeto) {
+
+    const areaCase =
+        document.getElementById(
+            "conteudo-case-projeto"
+        );
+
+
+    if (!areaCase) {
+        return;
+    }
+
+
+    const botaoProjeto =
+        projeto.linkProjeto
+
+            ? `
+                <a
+                    href="${projeto.linkProjeto}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="botao botao-principal botao-visitar-projeto"
+                >
+                    Visitar projeto
+                    <span aria-hidden="true">↗</span>
+                </a>
+            `
+
+            : "";
+
+
+    areaCase.innerHTML = `
+
+        <article class="case-projeto">
+
+            <header class="abertura-case">
+
+                <p class="texto-pequeno">
+
+                    <span>
+                        CASE / ${projeto.numero}
+                    </span>
+
+                    ${projeto.categoria}
+
+                </p>
+
+
+                <h2>
+                    ${projeto.nome}
+                </h2>
+
+
+                <p class="frase-case">
+                    ${projeto.fraseCase}
+                </p>
+
+
+                <div class="tecnologias-projeto">
+                    ${criarListaTecnologias(
+                        projeto.tecnologias
+                    )}
+                </div>
+
+            </header>
+
+
+            <div class="secoes-case">
+
+                ${criarSecoesCase(
+                    projeto.secoesCase
+                )}
+
+            </div>
+
+
+            <footer class="final-case">
+
+                <p class="rotulo-sobre">
+                    ENTRE SONHOS
+                </p>
+
+                <h3>
+                    Um projeto em constante construção.
+                </h3>
+
+                ${botaoProjeto}
+
+            </footer>
+
+        </article>
+
+    `;
+
+}
+
 
 
 window.addEventListener(
     "hashchange",
     atualizarPaginaPelaUrl
 );
+
+
+const botaoVoltarProjetos =
+    document.getElementById(
+        "voltar-projetos"
+    );
+
+
+if (botaoVoltarProjetos) {
+
+    botaoVoltarProjetos.addEventListener(
+        "click",
+        () => {
+
+            window.location.hash =
+                "projetos";
+
+        }
+    );
+
+}
 
 
 
@@ -846,6 +1482,8 @@ window.addEventListener(
 /* ==========================================
    INICIAR
 ========================================== */
+
+renderizarProjetos();
 
 atualizarPaginaPelaUrl();
 
