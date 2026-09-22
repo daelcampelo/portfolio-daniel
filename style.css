@@ -1670,6 +1670,26 @@ body::after {
 }
 
 
+.projeto-destaque {
+    overflow: hidden;
+}
+
+.destaque-midia {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-bottom: 1px solid var(--borda);
+}
+
+.destaque-midia img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+}
+
+
 .midia-projeto {
     position: relative;
 
@@ -2114,9 +2134,14 @@ body::after {
 
 .conteudo-contato {
 
+    min-height:
+        calc(100dvh - 175px);
+
     display: flex;
 
     flex-direction: column;
+
+    justify-content: center;
 
     align-items: center;
 
@@ -2125,116 +2150,327 @@ body::after {
 }
 
 
+/* ======================================
+   INTRODUÇÃO DO CONTATO
+====================================== */
+
+.introducao-contato {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
 
 .titulo-contato {
+
+    max-width:
+        900px;
 
     font-family:
         var(--fonte-titulo);
 
     font-size:
-
         clamp(
-            4rem,
-            8vw,
-            8rem
+            3.3rem,
+            6vw,
+            6.4rem
         );
 
+    font-weight:
+        700;
+
     line-height:
-        0.86;
+        0.94;
 
     letter-spacing:
-        -0.07em;
+        -0.06em;
 
 }
-
 
 
 .titulo-contato span {
 
     display: block;
 
-    color: transparent;
-
-    -webkit-text-stroke:
-
-        1px
-        rgba(
-            255,
-            255,
-            255,
-            0.55
-        );
+    color:
+        var(--cinza);
 
 }
-
 
 
 .descricao-contato {
 
     max-width:
-        520px;
+        560px;
 
     margin-top:
-        30px;
+        28px;
 
     color:
-        var(--cinza);
-
-    line-height:
-        1.7;
-
-}
-
-
-
-.links-contato {
-
-    display: flex;
-
-    gap:
-        30px;
-
-    margin-top:
-        35px;
-
-}
-
-
-
-.links-contato a {
-
-    color: white;
-
-    text-decoration: none;
+        #b0b0ba;
 
     font-family:
-        var(--fonte-codigo);
+        var(--fonte-texto);
 
     font-size:
-        0.68rem;
+        1rem;
 
-    letter-spacing:
-        1px;
-
-    text-transform:
-        uppercase;
-
-    padding-bottom:
-        6px;
-
-    border-bottom:
-
-        1px solid
-        var(--roxo);
+    line-height:
+        1.75;
 
 }
 
 
+/* ======================================
+   REDES
+====================================== */
 
-.links-contato span {
+.redes-contato {
+
+    width:
+        min(
+            760px,
+            100%
+        );
+
+    margin-top:
+        58px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    align-items: center;
+
+    gap:
+        18px;
+
+}
+
+
+/* ======================================
+   LINK DE CADA REDE
+====================================== */
+
+.link-rede {
+
+    width:
+        64px;
+
+    height:
+        64px;
+
+    justify-self:
+        center;
+
+    display:
+        inline-flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap:
+        12px;
+
+    padding:
+        0 19px;
+
+    overflow:
+        hidden;
+
+    border:
+
+        1px solid
+        var(--borda);
+
+    border-radius:
+        999px;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            0.02
+        );
+
+    color:
+        var(--branco);
+
+    text-decoration:
+        none;
+
+    white-space:
+        nowrap;
+
+    transition:
+
+        width 0.4s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+/* ======================================
+   ÍCONE
+====================================== */
+
+.icone-rede {
+
+    width:
+        24px;
+
+    min-width:
+        24px;
+
+    height:
+        24px;
+
+    display:
+        flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.icone-rede svg {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    fill:
+        none;
+
+    stroke:
+        currentColor;
+
+    stroke-width:
+        1.6;
+
+    stroke-linecap:
+        round;
+
+    stroke-linejoin:
+        round;
+
+}
+
+
+/*
+   LinkedIn e GitHub utilizam
+   formas preenchidas.
+*/
+
+.link-rede:nth-child(1) svg,
+.link-rede:nth-child(2) svg {
+
+    fill:
+        currentColor;
+
+    stroke:
+        none;
+
+}
+
+
+/* ======================================
+   NOME DA REDE
+====================================== */
+
+.nome-rede {
+
+    opacity:
+        0;
+
+    transform:
+        translateX(-6px);
+
+    color:
+        var(--branco);
+
+    font-family:
+        var(--fonte-texto);
+
+    font-size:
+        0.92rem;
+
+    font-weight:
+        600;
+
+    transition:
+
+        opacity 0.25s ease,
+        transform 0.3s ease;
+
+}
+
+
+/* ======================================
+   INTERAÇÃO
+====================================== */
+
+.link-rede:hover,
+.link-rede:focus-visible {
+
+    width:
+        155px;
+
+    border-color:
+
+        rgba(
+            168,
+            85,
+            247,
+            0.55
+        );
+
+    background:
+
+        rgba(
+            168,
+            85,
+            247,
+            0.07
+        );
 
     color:
         var(--roxo);
+
+    transform:
+        translateY(-2px);
+
+    outline:
+        none;
+
+}
+
+
+.link-rede:hover .nome-rede,
+.link-rede:focus-visible .nome-rede {
+
+    opacity:
+        1;
+
+    transform:
+        translateX(0);
 
 }
 
@@ -2635,7 +2871,7 @@ and
     .secao-case {
         display: block;
 
-        padding: 45px 0;
+        padding: 52px 0;
     }
 
 
@@ -2657,12 +2893,46 @@ and
 
     .texto-case p {
         font-size: 0.92rem;
+          line-height: 1.8;
+    }
+
+    .botao-case {
+
+        min-height:
+            44px;
+
+        padding:
+            0 18px;
+
+        display:
+            inline-flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
     }
 
     .pagina {
 
         padding:
             76px 6% 40px;
+
+    }
+
+
+    .voltar-projetos {
+
+        min-height:
+            44px;
+
+        display:
+            inline-flex;
+
+        align-items:
+            center;
 
     }
 
@@ -2703,27 +2973,43 @@ and
 
 
     .descricao-principal {
-        max-width: 100%;
 
-        font-size: 0.82rem;
-        line-height: 1.7;
+        max-width:
+            330px;
+
+        font-size:
+            0.9rem;
+
+        line-height:
+            1.7;
+
     }
 
 
     .botoes-inicio {
-        width: 100%;
-        margin-top: 24px;
 
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
+        width:
+            100%;
+
+        justify-content:
+            center;
+
+        gap:
+            10px;
+
     }
 
     .botao {
-        min-width: 155px;
-        padding: 11px 15px;
 
-        font-size: 0.7rem;
+        min-width:
+            145px;
+
+        padding:
+            12px 15px;
+
+        font-size:
+            0.76rem;
+
     }
 
 
@@ -2790,8 +3076,35 @@ and
     }
 
     .cabecalho-projetos-formacao {
-        margin-top: 70px;
-        padding-top: 42px;
+            margin-top: 72px;
+            padding-top: 42px;
+        }
+
+        .cartao-projeto-formacao .midia-projeto {
+
+        aspect-ratio:
+            16 / 9;
+
+        overflow:
+            hidden;
+
+    }
+
+
+    .cartao-projeto-formacao .midia-projeto img {
+
+        width:
+            100%;
+
+        height:
+            100%;
+
+        display:
+            block;
+
+        object-fit:
+            cover;
+
     }
 
     .conteudo-projeto-formacao {
@@ -2810,10 +3123,102 @@ and
     }
 
 
+    .conteudo-contato {
+
+        min-height:
+            auto;
+
+        padding-top:
+            25px;
+
+    }
+
+
     .titulo-contato {
 
         font-size:
-            3.3rem;
+            clamp(
+                2.8rem,
+                13vw,
+                4rem
+            );
+
+        line-height:
+            0.96;
+
+    }
+
+
+    .descricao-contato {
+
+        margin-top:
+            22px;
+
+        font-size:
+            0.92rem;
+
+    }
+
+
+    .redes-contato {
+
+        margin-top:
+            42px;
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+        gap:
+            12px;
+
+    }
+
+
+    .link-rede {
+
+        width:
+            100%;
+
+        height:
+            58px;
+
+        justify-self:
+            stretch;
+
+        justify-content:
+            flex-start;
+
+        padding:
+            0 17px;
+
+    }
+
+
+    .nome-rede {
+
+        opacity:
+            1;
+
+        transform:
+            none;
+
+        font-size:
+            0.86rem;
+
+    }
+
+
+    .link-rede:hover,
+    .link-rede:focus-visible {
+
+        width:
+            100%;
+
+        transform:
+            none;
 
     }
 
@@ -2837,6 +3242,110 @@ and
         padding-bottom: 28px;
 
         font-size: 0.56rem;
+    }
+
+
+    .layout-inicio {
+
+        gap:
+            32px;
+
+    }
+
+
+    /* ======================================
+    SOBRE - MOBILE
+    ====================================== */
+
+    #sobre .texto-sobre {
+
+        max-width:
+            100%;
+
+    }
+
+
+    #sobre .texto-sobre p {
+
+        margin-bottom:
+            22px;
+
+        font-size:
+            0.92rem;
+
+        line-height:
+            1.75;
+
+    }
+
+
+    /* ======================================
+    CONTATO - MOBILE
+    ====================================== */
+
+    #contato .titulo-contato {
+
+        max-width:
+            330px;
+
+    }
+
+
+    #contato .descricao-contato {
+
+        max-width:
+            300px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    #contato .redes-contato {
+
+        width:
+            100%;
+
+        max-width:
+            330px;
+
+        gap:
+            12px;
+
+    }
+
+
+    #contato .link-rede {
+
+        min-height:
+            52px;
+
+        padding:
+            0 16px;
+
+    }
+
+
+    #contato .icone-rede {
+
+        width:
+            20px;
+
+        min-width:
+            20px;
+
+        height:
+            20px;
+
+    }
+
+
+    #contato .nome-rede {
+
+        font-size:
+            0.82rem;
+
     }
 
 }
