@@ -143,7 +143,7 @@ const projetos = [
 
         ],
 
-        linkProjeto: ""
+        linkProjeto: "https://entre-sonhos.vercel.app/"
     },
 
 
@@ -174,7 +174,7 @@ const projetos = [
 
         possuiCase: false,
 
-        linkProjeto: ""
+        linkProjeto: "https://fokus-projeto-delta.vercel.app/"
     },
 
 
@@ -205,7 +205,7 @@ const projetos = [
 
         possuiCase: false,
 
-        linkProjeto: ""
+        linkProjeto: "https://jogo-do-numero-secreto-b2qp.vercel.app/"
     }
 
 ];
@@ -413,6 +413,20 @@ function renderizarProjetos() {
                                     )}
 
                                 </div>
+
+                                ${projeto.linkProjeto
+                                    ? `
+                                        <a
+                                            href="${projeto.linkProjeto}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="botao-case"
+                                        >
+                                            Visitar projeto
+                                        </a>
+                                    `
+                                    : ""
+                                }
 
                             </div>
 
